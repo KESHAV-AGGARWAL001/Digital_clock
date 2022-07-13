@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital clock</title>
+  </head>
+  <body style="background-color: rgb(22, 21, 45)">
+    <!--  -->
+    <div
+      style="
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+      "
+      id="flex-col"
+    >
+      <!--  -->
+      <div
+        style="
+          margin-top: 20%;
+          display: flex;
+          background-color: white;
+          width: 130px;
+          margin-right: 10px;
+          height: 130px;
+          border-radius: 100%;
+          justify-content: center;
+          align-items: center;
+          box-sizing: border-box;
+          border: 6px solid rgb(8 132 255 / 65%);
+          padding: 0px 20px 0px 20px;
+          flex-direction: column;
+          /* margin: auto; */
+        "
+      >
+        <p
+          id="first"
+          style="
+            color: rgb(8 132 255 / 65%);
+            font-size: 2.4rem;
+            padding: 2px 0px 2px 0px;
+          "
+        ></p>
+      </div>
+      <!--  -->
+      <div
+        style="
+          display: flex;
+          margin-top: 20%;
+          background-color: white;
+          width: 130px;
+          height: 130px;
+          border-radius: 100%;
+          justify-content: center;
+          margin-right: 10px;
+          align-items: center;
+          box-sizing: border-box;
+          border: 6px solid rgb(207, 106, 177);
+          padding: 20px 0px 20px 0px;
+          flex-direction: column;
+          /* margin: auto; */
+        "
+      >
+        <p
+          id="second"
+          style="
+            color: rgb(209, 106, 177);
+            font-size: 2.4rem;
+            padding: 2px 0px 2px 0px;
+          "
+        ></p>
+      </div>
+      <!--  -->
+      <div
+        id="third"
+        style="
+          display: flex;
+          margin-top: 20%;
+          background-color: white;
+          width: 130px;
+          height: 130px;
+          border-radius: 100%;
+          justify-content: center;
+          margin-right: 10px;
+          align-items: center;
+          box-sizing: border-box;
+          border: 6px solid rgb(1, 255, 145);
+          padding: 20px 0px 20px 0px;
+          flex-direction: column;
+          color: rgb(1, 255, 145);
+          font-size: 2.4rem;
+          /* margin: auto; */
+        "
+        <!--
+        onclick="seco()"
+        --
+      >
+        >
+        <p
+          id="third"
+          style="
+            color: rgb(210, 28, 152);
+            font-size: 2.4rem;
+            padding: 2px 0px 2px 0px;
+          "
+        ></p>
+      </div>
+      <!--  -->
+      <div
+        style="
+          display: flex;
+          background-color: white;
+          width: 130px;
+          margin-top: 20%;
+          height: 130px;
+          border-radius: 100%;
+          justify-content: center;
+          margin-right: 10px;
+          align-items: center;
+          box-sizing: border-box;
+          border: 6px solid rgb(7, 252, 215);
+          padding: 20px 0px 20px 0px;
+          flex-direction: column;
+        "
+      >
+        <p
+          id="fourth"
+          style="
+            color: rgb(7, 252, 215);
+            font-size: 2.4rem;
+            padding: 2px 0px 2px 0px;
+          "
+        ></p>
+      </div>
+      <!--  -->
+    </div>
+    <script>
+      setInterval(() => {
+        let anime = new Date();
+        let hours = anime.getHours();
+        let minutes = anime.getMinutes();
+        let seconds = anime.getSeconds();
+        if (hours > 12) {
+          document.getElementById("fourth").innerText = "PM";
+        } else {
+          document.getElementById("fourth").innerText = "AM";
+        }
+        document.getElementById("first").innerText = hours;
+        document.getElementById("second").innerText = minutes;
+        document.getElementById("third").innerText = seconds;
+        if (hours > 12) {
+          document.getElementById("first").innerHTML -= 12;
+        }
+      });
+    </script>
+  </body>
+</html>
